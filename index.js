@@ -11,10 +11,10 @@ var port = process.env.PORT || 3789;
 //Certificados
 
 var credentials = {
-	ca: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/ca.pem", 'utf8'), //la certification authority o CA
-	key: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/key.pem", 'utf8'), //la clave SSL, que es el primer archivo que generamos ;)
-	cert: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/fullchain.pem", 'utf8') //el certificado
-
+	ca: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/ca.pem"), //la certification authority o CA
+	key: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/key.pem"), //la clave SSL, que es el primer archivo que generamos ;)
+	cert: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/fullchain.pem") //el certificado
+	//cert: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/fullchain.pem", 'utf8')
 };
 
  

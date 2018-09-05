@@ -20,8 +20,8 @@ var options = {
 	ca: ca
 };
 
-http.createServer(app).listen(80);
-https.createServer(options, app).listen(443);
+// http.createServer(app).listen(80);
+// https.createServer(options, app).listen(443);
 
 // cargar rutas
 

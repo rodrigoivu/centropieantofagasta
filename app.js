@@ -1,10 +1,27 @@
 'use strict'
+var http = require('http');
+var https = require('https');
+var fs = require('fs');
 
 var express = require ('express');
 var bodyParser = require ('body-parser');
 var path = require('path');
 
 var app = express();
+
+//Certificados
+var key = fs.readFileSync('/etc/nginx/certs/centropiecmds.cl/key.pem');
+var cert = fs.readFileSync( '/etc/nginx/certs/centropiecmds.cl/fullchain.pem' );
+var ca = fs.readFileSync( '/etc/nginx/certs/centropiecmds.cl/ca.pem' );
+
+var options = {
+	key: key,
+	cert: cert,
+	ca: ca
+};
+
+http.createServer(app).listen(80);
+https.createServer(options, app).listen(443);
 
 // cargar rutas
 
@@ -34,7 +51,13 @@ app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
 	res.header('Allow','GET, POST, OPTIONS, PUT, DELETE');
 
-	next();
+	//next();
+
+	if (req.secure) {
+        next();
+    } else {
+        res.redirect('https://' + req.headers.host + req.url);
+    }
 });
 
 //rutas base

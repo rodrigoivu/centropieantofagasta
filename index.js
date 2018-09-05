@@ -1,6 +1,6 @@
 'use strict'
- // var https = require('https');
- // var fs = require('fs');
+ var https = require('https');
+ var fs = require('fs');
 
 var mongoose = require('mongoose');
 var app = require('./app');
@@ -9,12 +9,13 @@ var port = process.env.PORT || 3789;
 
 
 //Certificados
+console.log('__dirname: '+__dirname);
+var credentials = {
+	ca: fs.readFileSync(__dirname+"/etc/nginx/certs/centropiecmds.cl/ca.pem", 'utf8'), //la certification authority o CA
+	key: fs.readFileSync(__dirname+"/etc/nginx/certs/centropiecmds.cl/key.pem", 'utf8'), //la clave SSL, que es el primer archivo que generamos ;)
+	cert: fs.readFileSync(__dirname+"/etc/nginx/certs/centropiecmds.cl/fullchain.pem", 'utf8') //el certificado
 
-// var credentials = {
-// 	ca: fs.readFileSync(__dirname+"/etc/nginx/certs/centropiecmds.cl/ca.pem", 'utf8'), //la certification authority o CA
-// 	key: fs.readFileSync(__dirname+"/etc/nginx/certs/centropiecmds.cl/fullchain.pem", 'utf8'), //la clave SSL, que es el primer archivo que generamos ;)
-// 	cert: fs.readFileSync(__dirname+"/ssl/certificate.crt", 'utf8') //el certificado
-// };
+};
 
  
 
@@ -27,7 +28,7 @@ if (err) {
 
 
 
- 
+    https.createServer(credentials, app).listen(443);
 
 	app.listen(port, function(){
     console.log("Servidor de adminpie escuchando en http://localhost:" + port);

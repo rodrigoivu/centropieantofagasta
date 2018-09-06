@@ -29,12 +29,12 @@ if (err) {
 
 
    
- //    https.createServer(credentials, app).listen(port, function(){
- //    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
-	// });
-
-	app.listen(port, function(){
+    https.createServer(credentials, app).listen(port, function(){
     console.log("Servidor de adminpie escuchando en http://localhost:" + port);
 	});
+
+	// app.listen(port, function(){
+ //    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
+	// });
 }
 });

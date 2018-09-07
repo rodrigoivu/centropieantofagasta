@@ -282,7 +282,8 @@ var FonoaudiologiaSchema = new Schema({
 	morfosintactico: morfosintactico,
 	pragmatico: pragmatico,
 	discursoNarrativo: discursoNarrativo,
-	socialComunicativa: socialComunicativa
+	socialComunicativa: socialComunicativa,
+  observaciones:{ type: String, required: false}
 
 	
 },{ collection: 'fonoaudiologia'}); // esto es para evitar que se grave como 

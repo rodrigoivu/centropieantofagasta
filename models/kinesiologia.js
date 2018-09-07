@@ -164,7 +164,8 @@ var KinesiologiaSchema = new Schema({
 	estabilidadDesplazamiento :estabilidadDesplazamiento,
 	coordinacionDinamica: coordinacionDinamica,
 	conductasPsicomotoras: conductasPsicomotoras,
-	alineacionPostural: alineacionPostural
+	alineacionPostural: alineacionPostural,
+	observaciones:{ type: String, required: false}
 	
 },{ collection: 'kinesiologia'}); // esto es para evitar que se grave como 
 

@@ -4,7 +4,7 @@ var uniqueValidator = require('mongoose-unique-validator');
 var Schema = mongoose.Schema;
 
 var profesionesValidas = {
-	values: ['GENERAL','NEUROLOGO', 'FONOAUDIOLOGO', 'KINESILOGO', 'TERAPEUTA', 'PSICOLOGO','AUDIO'],
+	values: ['GENERAL','NEUROLOGO', 'FONOAUDIOLOGO', 'KINESIOLOGO', 'TERAPEUTA', 'PSICOLOGO','AUDIO'],
 	message: '{VALUE} no es una profesión permitida'
 };
 

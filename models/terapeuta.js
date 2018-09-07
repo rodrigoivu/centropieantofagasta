@@ -152,7 +152,8 @@ var TerapeutaSchema = new Schema({
 	ocio: ocio,
 	juego: juego,
 	participacionSocial: participacionSocial,
-	transversal: transversal
+	transversal: transversal,
+  observaciones:{ type: String, required: false}
 	
 	
 },{ collection: 'terapeuta'}); // esto es para evitar que se grave como 

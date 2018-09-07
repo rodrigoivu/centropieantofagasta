@@ -45,7 +45,8 @@ var PsicologiaSchema = new Schema({
 	establecerVinculo: establecerVinculo,
 	capacidadesAdaptativas: capacidadesAdaptativas,
 	autoconcepto: autoconcepto,
-	labilidadEmocional: labilidadEmocional
+	labilidadEmocional: labilidadEmocional,
+  observaciones:{ type: String, required: false}
 
 	
 	

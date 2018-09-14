@@ -77,7 +77,7 @@ app.use('/api', terapeuta_routes);
 app.use('/api', pesquisa_routes);
 
 app.get('*', function(req,res,next){
-	res.sendFile(path.resolve('/client/index.html'));
+	res.sendFile(path.resolve('./client/index.html'));
 });
 
 

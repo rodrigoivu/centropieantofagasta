@@ -14,7 +14,7 @@ var credentials = {
 	ca: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/ca.pem"), //la certification authority o CA
 	key: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/key.pem"), //la clave SSL, que es el primer archivo que generamos ;)
 	cert: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/fullchain.pem") //el certificado
-	//cert: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/fullchain.pem", 'utf8')
+	// //cert: fs.readFileSync("/etc/nginx/certs/centropiecmds.cl/fullchain.pem", 'utf8')
 };
 
  
@@ -29,12 +29,12 @@ if (err) {
 
 
    
-    https.createServer(credentials, app).listen(port, function(){
-    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
-	});
-
-	// app.listen(port, function(){
+ //    https.createServer(credentials, app).listen(port, function(){
  //    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
 	// });
+
+	app.listen(port, function(){
+    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
+	});
 }
 });

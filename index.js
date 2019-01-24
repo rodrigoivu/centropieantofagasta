@@ -26,12 +26,12 @@ if (err) {
 }else{
 	console.log("La conexión a la base de datos está funcionando correctamente...");
 
-    https.createServer(credentials, app).listen(port, function(){
-    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
-	});
-
-	// app.listen(port, function(){
+ //    https.createServer(credentials, app).listen(port, function(){
  //    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
 	// });
+
+	app.listen(port, function(){
+    console.log("Servidor de adminpie escuchando en http://localhost:" + port);
+	});
 }
 });
